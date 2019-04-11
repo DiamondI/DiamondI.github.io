@@ -122,9 +122,9 @@
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>在邮件中嵌入<code>img</code>标签，并添加<code>src</code>属性，那么当该邮件被打开的时候，<code>src</code>的值——一个指定的url，将会被访问。由此，被访问的url，将会得知该邮件被打开过。</p>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p><strong>首先</strong>打开一个terminal，运行如下命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8000</span><br></pre></td></tr></table></figure>
-<p>该命令的含义是用Python在8000端口号创建一个SimpleHTTPServer，可以通过<code>localhost:8000</code>访问。当被访问时，terminal上会打印一行log信息。</p>
+<p>该命令的含义是用Python在8000端口号创建一个SimpleHTTPServer，可以通过<code>http://localhost:8000</code>访问。当被访问时，terminal上会打印一行log信息。</p>
 <p><strong>之后</strong>，用自己的A邮箱发邮件给B邮箱，内容是：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"localhost:8000"</span> <span class="attr">height</span>=<span class="string">"1"</span> <span class="attr">width</span>=<span class="string">"1"</span> &gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://localhost:8000"</span> <span class="attr">height</span>=<span class="string">"1"</span> <span class="attr">width</span>=<span class="string">"1"</span> &gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>上面这个像素为1的代码即为网络信标。</p>
 <p>【<em>注意：</em> 需要用HTML编辑模式才行，我实验的时候是使用的QQ邮箱，它可以使用HTML编辑模式】</p>
 <p><strong>最后</strong>，B邮箱收到A邮箱发来的邮件，点开该邮件，发现terminal上新打印了一行log信息。重新点开该邮件，发现又新打印了一行log信息。这说明，网络信标确实可以检测邮件是否被打开。</p>
