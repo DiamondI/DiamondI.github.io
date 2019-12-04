@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="罗杰疑案——麻将的bug"><link rel="alternate" href="/atom.xml" title="DiamondI's blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="http://diamondi.github.io/2019/11/06/roger/">
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css"><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true,"latex":true};
+</script>
+
+    <title>罗杰疑案——麻将的bug - DiamondI's blog</title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">DiamondI's blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">DiamondI's blog</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            Categories
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">罗杰疑案——麻将的bug
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-11-06
+        </span><span class="post-category">
+            <a href="/categories/Misc/">Misc</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#罗杰疑案——麻将的bug"><span class="toc-text">罗杰疑案——麻将的bug</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#何为天胡？"><span class="toc-text">何为天胡？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#庄家——East-Wind"><span class="toc-text">庄家——East Wind</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#医生Shepperd是庄家吗？"><span class="toc-text">医生Shepperd是庄家吗？</span></a></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><h1 id="罗杰疑案——麻将的bug"><a href="#罗杰疑案——麻将的bug" class="headerlink" title="罗杰疑案——麻将的bug"></a>罗杰疑案——麻将的bug</h1><p>在罗杰疑案中，有一段四个人在打麻将的过程中聊有关案件的八卦的情节。在这个情节中，医生Shepperd胡了一次天胡，而这次天胡却极可能是阿婆笔下的一个bug。</p>
+<p><strong>天胡原文如下[^1]：</strong></p>
+<blockquote>
+<p>I did not answer for a moment. I was overwhelmed and intoxicated. I had read of there being such a thing as The Perferct Winning–going Mah Jong on one’s original hand. I had nerver hoped to hold the hand myself.</p>
+<p>With suppressed triumph I laid my hand face upwards on the table.</p>
+<p>‘As they say in Shanghai Club,’ I remarked–’The Tinho–The Perfect Winning!’</p>
+</blockquote>
+<p>这里的<code>I</code>指的就是医生Shepperd，而这里的<code>The Tinho</code>和<code>The Perfect Wining</code>就是指”天胡“。</p>
+<h2 id="何为天胡？"><a href="#何为天胡？" class="headerlink" title="何为天胡？"></a>何为天胡？</h2><p>在麻将中，天胡指的是洗完牌之后，抓完起始牌，就发现已经胡牌了。这是一种只有庄家能胡的牌，因为只有庄家抓完起始牌后拥有14张牌，而其他人都只有13张牌，少了牌是不可能胡的。</p>
+<p>简而言之，<strong>天胡</strong>要求胡牌的人必须是<strong>庄家</strong>！</p>
+<p>那么，谁是庄家呢？</p>
+<h2 id="庄家——East-Wind"><a href="#庄家——East-Wind" class="headerlink" title="庄家——East Wind"></a>庄家——East Wind</h2><p>在麻将中，如果庄家胡牌，那么将会继续坐庄；如果是非庄家的玩家胡牌了，那么就会轮到庄家的下家坐庄。在英语中，庄家被称作East Wind。这是因为在中国，庄家又被称作“东风”的关系。</p>
+<p>下面是mahjong wiki里对连庄与轮庄的说明</p>
+<blockquote>
+<p>For the next hand, <strong>if the winner is not the dealer</strong>, rotate the dealer and seat winds counterclockwise. The South player of the first round becomes the new East, and the other players change seat winds accordingly. Shuffle the tiles, rebuild the wall, and start again! <strong>If the winner is the dealer</strong>, he continues to be the dealer and the dealer is not rotated.</p>
+</blockquote>
+<p><img src="http://mahjong.wikidot.com/local--files/index:winds/hand1.png" alt></p>
+<blockquote>
+<p>The player sitting at the star is East in the first hand.</p>
+</blockquote>
+<p><img src="http://mahjong.wikidot.com/local--files/index:winds/hand2.png" alt></p>
+<blockquote>
+<p>The player sitting at the star is now South</p>
+</blockquote>
+<p>在罗杰疑案的麻将情景中，有一个经常被提及的术语——East Wind：</p>
+<p><strong>开局时，James，即医生坐庄[^1]：</strong></p>
+<blockquote>
+<p>‘Go on, James,’ said Caroline at last. ‘You’re East Wind.’</p>
+</blockquote>
+<p><strong>Caroline胡的第一局[^1]：</strong></p>
+<blockquote>
+<p>‘East Wind passes’, said Caroline. ‘I’ve got an idea of my own about Ralph Paton. Three Characters. But I’m keeping it to myself for the present.’</p>
+</blockquote>
+<p><strong>Miss Gannett胡的第一局[^1]：</strong></p>
+<blockquote>
+<p>East Wind passed， and we started a new hand in silence.</p>
+</blockquote>
+<p><strong>Miss Gannett胡的第二局[^1]：</strong></p>
+<blockquote>
+<p>East Wind passed, and we set to once more. Annie brought in the tea things. Caroline and Miss Gannett were both slightly ruffled as is often the case during one of these festive evenings.</p>
+</blockquote>
+<p>这里的East Wind passed字面上看是指东风吹了过去。既然东风是庄家的意思，那么这里的实际意思自然是指轮到下家坐庄了。也就是说，至少小说中的麻将是会轮流坐庄的。</p>
+<p>另外值得一提的一点是，从原文找那个可以看出，他们是遵守上海俱乐部的麻将规则来打的。而上海麻将的坐庄规则和其他地方不太一样。</p>
+<p><strong>上海麻将坐庄规则[^2]：</strong></p>
+<blockquote>
+<p><strong>庄家：</strong></p>
+<p>第一局系统随机选择庄家。</p>
+<p>谁胡牌下盘当庄家，若流局则上盘庄家下盘继续当庄家。</p>
+<p>炮胡且一炮2响或3响，点炮者最近的一个胡牌者下家为下盘庄家。</p>
+</blockquote>
+<p>那么原文里看得出来这一点吗？其实是能看出来。从前面引用的原文的Caroline胡的第一局来看，她胡了之后换了庄家，虽然没有明说庄家是谁，但是显然是她出的第一张牌——“Three Character”，即三万。也就是说，她在胡牌之后就成为了庄家。虽说也有可能她恰好是医生的下家，但是一来文中看不出这一点，二来谁胡谁坐庄也与上海麻将的规则一致。因此一定程度上可以确定，他们的规则就是谁胡谁坐庄的上海规则。</p>
+<h2 id="医生Shepperd是庄家吗？"><a href="#医生Shepperd是庄家吗？" class="headerlink" title="医生Shepperd是庄家吗？"></a>医生Shepperd是庄家吗？</h2><p>如果小说中的麻将<strong>遵守连庄规则</strong>的话，那么医生绝不可能是庄家！</p>
+<p>在医生天胡之前，有这样一段描写[^1]：</p>
+<blockquote>
+<p>The situation became more strained. It was annoyance at Miss Gannett’s going Mah Jong for the third time running which prompted Caroline to say to me as we built a fresh wall: 
+‘You are too tiresome, James. You sit there like a dead-head, and say nothing at all’</p>
+</blockquote>
+<p>也就是说在医生Shepperd天胡之前，Miss Gannett已经连续胡了三次了。这意味着，医生Shepperd这时候不可能是庄家！</p>
+<p>如果Miss Gannett胡牌的某一次轮到自己坐庄了，那么她就连庄了，不可能由医生来坐庄。只能考虑这三次都不是Miss Gannett坐庄，那么最可能的情况下是，Miss Gannett第一次胡牌的时候是在自己的下家，而医生恰好是她的上家；可是即便如此，Miss Gannett胡了三次牌之后，也是轮到自己坐庄而不是医生坐庄。</p>
+<p>因此，这可能是阿婆笔下的一个<strong>bug</strong>！</p>
+<p>不过，如果小说中的麻将并没有连庄机制的话，那么医生坐庄就合情合理了。因为文中明确写明开局的时候，医生是东风。后面医生的姐姐胡了一把，Miss Gannett连续胡了三局。四局结束之后，便恰好轮到医生坐庄。</p>
+<p>不过我还是倾向于这是阿婆笔下的一个bug，没有连庄机制的麻将，实在是难以想象！我觉得零食行人是不会答应的吧？</p>
+<blockquote>
+<p>Perhaps tinted with the West’s fascination with exotic oriental cultures, mahjong became all the rage in the 1920s in the West and was promoted as the crystallization of ancient Chinese wisdom. [^3]</p>
+</blockquote>
+<p>[^1]: The murder of roger ackroyd, HarperCollinsPublishers, Edition 2019 1
+[^2]: 上海麻将百度百科，链接：<a href="https://baike.baidu.com/item/上海麻将/1688864" target="_blank" rel="noopener">https://baike.baidu.com/item/上海麻将/1688864</a>
+[^3]:  陳熙遠. 從馬吊到馬將: 小玩意與大傳統交織的一段歷史因緣[J]. 2009. </p>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="http://diamondi.github.io">DiamondI</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="http://diamondi.github.io/2019/11/06/roger/">http://diamondi.github.io/2019/11/06/roger/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        
+        <nav class="post-nav"><a class="next" href="/2019/09/16/base64/">
+        <span class="next-text nav-default"></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="https://github.com/DiamondI" class="iconfont icon-github" title="github"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2015 - 2019<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">DiamondI</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://diamondi.github.io/2019/11/06/roger/';
+        this.page.identifier = '2019/11/06/roger/';
+        this.page.title = '罗杰疑案——麻将的bug';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//https-diamondi-github-io.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
