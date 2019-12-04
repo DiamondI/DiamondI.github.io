@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
-<meta name="theme-color" content="#f8f5ec" />
+<meta name="theme-color" content="#f8f5ec">
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<link rel="alternate" href="/atom.xml" title="DiamondI's blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
-<link rel="canonical" href="http://diamondi.github.io/"/>
+<link rel="alternate" href="/atom.xml" title="DiamondI's blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="http://diamondi.github.io/">
 
-<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" /><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" /><script type="text/x-mathjax-config">
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css"><script type="text/x-mathjax-config">
     MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
   </script>
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
 
 <script id="baidu_push">
 (function(){
@@ -109,162 +109,6 @@
           <div class="read-more">
             <a href="/2019/12/05/roger/" class="read-more-link">Read more..</a>
           </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2019/09/16/base64/"></a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-09-16
-        </span></div>
-    </header>
-
-    <div class="post-content"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head><meta name="generator" content="Hexo 3.9.0"><title>Python: module base64</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head><body bgcolor="#f0f0f8">
-
-<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="heading">
-<tr bgcolor="#7799ee">
-<td valign="bottom">&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>base64</strong></big></big></font></td><td align="right" valign="bottom"><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/base64.py" target="_blank" rel="noopener">/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/base64.py</a><br><a href="https://docs.python.org/3.6/library/base64" target="_blank" rel="noopener">Module Reference</a></font></td></tr></table>
-    <p><tt>Base16,&nbsp;Base32,&nbsp;Base64&nbsp;(<a href="http://www.rfc-editor.org/rfc/rfc3548.txt" target="_blank" rel="noopener">RFC&nbsp;3548</a>),&nbsp;Base85&nbsp;and&nbsp;Ascii85&nbsp;data&nbsp;encodings</tt></p>
-<p>
-<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="section">
-<tr bgcolor="#aa55cc">
-<td colspan="3" valign="bottom">&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign="top"><a href="binascii.html">binascii</a><br>
-</td><td width="25%" valign="top"><a href="re.html">re</a><br>
-</td><td width="25%" valign="top"><a href="struct.html">struct</a><br>
-</td><td width="25%" valign="top"></td></tr></table></td></tr></table></p><p>
-<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="section">
-<tr bgcolor="#eeaa77">
-<td colspan="3" valign="bottom">&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-a85decode"><strong>a85decode</strong></a>(b, *, foldspaces=False, adobe=False, ignorechars=b' \t\n\r\x0b')</dt><dd><tt>Decode&nbsp;the&nbsp;Ascii85&nbsp;encoded&nbsp;bytes-like&nbsp;object&nbsp;or&nbsp;ASCII&nbsp;string&nbsp;b.<br>
-&nbsp;<br>
-foldspaces&nbsp;is&nbsp;a&nbsp;flag&nbsp;that&nbsp;specifies&nbsp;whether&nbsp;the&nbsp;'y'&nbsp;short&nbsp;sequence&nbsp;should&nbsp;be<br>
-accepted&nbsp;as&nbsp;shorthand&nbsp;for&nbsp;4&nbsp;consecutive&nbsp;spaces&nbsp;(ASCII&nbsp;0x20).&nbsp;This&nbsp;feature&nbsp;is<br>
-not&nbsp;supported&nbsp;by&nbsp;the&nbsp;"standard"&nbsp;Adobe&nbsp;encoding.<br>
-&nbsp;<br>
-adobe&nbsp;controls&nbsp;whether&nbsp;the&nbsp;input&nbsp;sequence&nbsp;is&nbsp;in&nbsp;Adobe&nbsp;Ascii85&nbsp;format&nbsp;(i.e.<br>
-is&nbsp;framed&nbsp;with&nbsp;&lt;~&nbsp;and&nbsp;~&gt;).<br>
-&nbsp;<br>
-ignorechars&nbsp;should&nbsp;be&nbsp;a&nbsp;byte&nbsp;string&nbsp;containing&nbsp;characters&nbsp;to&nbsp;ignore&nbsp;from&nbsp;the<br>
-input.&nbsp;This&nbsp;should&nbsp;only&nbsp;contain&nbsp;whitespace&nbsp;characters,&nbsp;and&nbsp;by&nbsp;default<br>
-contains&nbsp;all&nbsp;whitespace&nbsp;characters&nbsp;in&nbsp;ASCII.<br>
-&nbsp;<br>
-The&nbsp;result&nbsp;is&nbsp;returned&nbsp;as&nbsp;a&nbsp;bytes&nbsp;object.</tt></dd></dl>
- <dl><dt><a name="-a85encode"><strong>a85encode</strong></a>(b, *, foldspaces=False, wrapcol=0, pad=False, adobe=False)</dt><dd><tt>Encode&nbsp;bytes-like&nbsp;object&nbsp;b&nbsp;using&nbsp;Ascii85&nbsp;and&nbsp;return&nbsp;a&nbsp;bytes&nbsp;object.<br>
-&nbsp;<br>
-foldspaces&nbsp;is&nbsp;an&nbsp;optional&nbsp;flag&nbsp;that&nbsp;uses&nbsp;the&nbsp;special&nbsp;short&nbsp;sequence&nbsp;'y'<br>
-instead&nbsp;of&nbsp;4&nbsp;consecutive&nbsp;spaces&nbsp;(ASCII&nbsp;0x20)&nbsp;as&nbsp;supported&nbsp;by&nbsp;'btoa'.&nbsp;This<br>
-feature&nbsp;is&nbsp;not&nbsp;supported&nbsp;by&nbsp;the&nbsp;"standard"&nbsp;Adobe&nbsp;encoding.<br>
-&nbsp;<br>
-wrapcol&nbsp;controls&nbsp;whether&nbsp;the&nbsp;output&nbsp;should&nbsp;have&nbsp;newline&nbsp;(b'\n')&nbsp;characters<br>
-added&nbsp;to&nbsp;it.&nbsp;If&nbsp;this&nbsp;is&nbsp;non-zero,&nbsp;each&nbsp;output&nbsp;line&nbsp;will&nbsp;be&nbsp;at&nbsp;most&nbsp;this<br>
-many&nbsp;characters&nbsp;long.<br>
-&nbsp;<br>
-pad&nbsp;controls&nbsp;whether&nbsp;the&nbsp;input&nbsp;is&nbsp;padded&nbsp;to&nbsp;a&nbsp;multiple&nbsp;of&nbsp;4&nbsp;before<br>
-encoding.&nbsp;Note&nbsp;that&nbsp;the&nbsp;btoa&nbsp;implementation&nbsp;always&nbsp;pads.<br>
-&nbsp;<br>
-adobe&nbsp;controls&nbsp;whether&nbsp;the&nbsp;encoded&nbsp;byte&nbsp;sequence&nbsp;is&nbsp;framed&nbsp;with&nbsp;&lt;~&nbsp;and&nbsp;~&gt;,<br>
-which&nbsp;is&nbsp;used&nbsp;by&nbsp;the&nbsp;Adobe&nbsp;implementation.</tt></dd></dl>
- <dl><dt><a name="-b16decode"><strong>b16decode</strong></a>(s, casefold=False)</dt><dd><tt>Decode&nbsp;the&nbsp;Base16&nbsp;encoded&nbsp;bytes-like&nbsp;object&nbsp;or&nbsp;ASCII&nbsp;string&nbsp;s.<br>
-&nbsp;<br>
-Optional&nbsp;casefold&nbsp;is&nbsp;a&nbsp;flag&nbsp;specifying&nbsp;whether&nbsp;a&nbsp;lowercase&nbsp;alphabet&nbsp;is<br>
-acceptable&nbsp;as&nbsp;input.&nbsp;&nbsp;For&nbsp;security&nbsp;purposes,&nbsp;the&nbsp;default&nbsp;is&nbsp;False.<br>
-&nbsp;<br>
-The&nbsp;result&nbsp;is&nbsp;returned&nbsp;as&nbsp;a&nbsp;bytes&nbsp;object.&nbsp;&nbsp;A&nbsp;binascii.Error&nbsp;is&nbsp;raised&nbsp;if<br>
-s&nbsp;is&nbsp;incorrectly&nbsp;padded&nbsp;or&nbsp;if&nbsp;there&nbsp;are&nbsp;non-alphabet&nbsp;characters&nbsp;present<br>
-in&nbsp;the&nbsp;input.</tt></dd></dl>
- <dl><dt><a name="-b16encode"><strong>b16encode</strong></a>(s)</dt><dd><tt>Encode&nbsp;the&nbsp;bytes-like&nbsp;object&nbsp;s&nbsp;using&nbsp;Base16&nbsp;and&nbsp;return&nbsp;a&nbsp;bytes&nbsp;object.</tt></dd></dl>
- <dl><dt><a name="-b32decode"><strong>b32decode</strong></a>(s, casefold=False, map01=None)</dt><dd><tt>Decode&nbsp;the&nbsp;Base32&nbsp;encoded&nbsp;bytes-like&nbsp;object&nbsp;or&nbsp;ASCII&nbsp;string&nbsp;s.<br>
-&nbsp;<br>
-Optional&nbsp;casefold&nbsp;is&nbsp;a&nbsp;flag&nbsp;specifying&nbsp;whether&nbsp;a&nbsp;lowercase&nbsp;alphabet&nbsp;is<br>
-acceptable&nbsp;as&nbsp;input.&nbsp;&nbsp;For&nbsp;security&nbsp;purposes,&nbsp;the&nbsp;default&nbsp;is&nbsp;False.<br>
-&nbsp;<br>
-<a href="http://www.rfc-editor.org/rfc/rfc3548.txt" target="_blank" rel="noopener">RFC&nbsp;3548</a>&nbsp;allows&nbsp;for&nbsp;optional&nbsp;mapping&nbsp;of&nbsp;the&nbsp;digit&nbsp;0&nbsp;(zero)&nbsp;to&nbsp;the<br>
-letter&nbsp;O&nbsp;(oh),&nbsp;and&nbsp;for&nbsp;optional&nbsp;mapping&nbsp;of&nbsp;the&nbsp;digit&nbsp;1&nbsp;(one)&nbsp;to<br>
-either&nbsp;the&nbsp;letter&nbsp;I&nbsp;(eye)&nbsp;or&nbsp;letter&nbsp;L&nbsp;(el).&nbsp;&nbsp;The&nbsp;optional&nbsp;argument<br>
-map01&nbsp;when&nbsp;not&nbsp;None,&nbsp;specifies&nbsp;which&nbsp;letter&nbsp;the&nbsp;digit&nbsp;1&nbsp;should&nbsp;be<br>
-mapped&nbsp;to&nbsp;(when&nbsp;map01&nbsp;is&nbsp;not&nbsp;None,&nbsp;the&nbsp;digit&nbsp;0&nbsp;is&nbsp;always&nbsp;mapped&nbsp;to<br>
-the&nbsp;letter&nbsp;O).&nbsp;&nbsp;For&nbsp;security&nbsp;purposes&nbsp;the&nbsp;default&nbsp;is&nbsp;None,&nbsp;so&nbsp;that<br>
-0&nbsp;and&nbsp;1&nbsp;are&nbsp;not&nbsp;allowed&nbsp;in&nbsp;the&nbsp;input.<br>
-&nbsp;<br>
-The&nbsp;result&nbsp;is&nbsp;returned&nbsp;as&nbsp;a&nbsp;bytes&nbsp;object.&nbsp;&nbsp;A&nbsp;binascii.Error&nbsp;is&nbsp;raised&nbsp;if<br>
-the&nbsp;input&nbsp;is&nbsp;incorrectly&nbsp;padded&nbsp;or&nbsp;if&nbsp;there&nbsp;are&nbsp;non-alphabet<br>
-characters&nbsp;present&nbsp;in&nbsp;the&nbsp;input.</tt></dd></dl>
- <dl><dt><a name="-b32encode"><strong>b32encode</strong></a>(s)</dt><dd><tt>Encode&nbsp;the&nbsp;bytes-like&nbsp;object&nbsp;s&nbsp;using&nbsp;Base32&nbsp;and&nbsp;return&nbsp;a&nbsp;bytes&nbsp;object.</tt></dd></dl>
- <dl><dt><a name="-b64decode"><strong>b64decode</strong></a>(s, altchars=None, validate=False)</dt><dd><tt>Decode&nbsp;the&nbsp;Base64&nbsp;encoded&nbsp;bytes-like&nbsp;object&nbsp;or&nbsp;ASCII&nbsp;string&nbsp;s.<br>
-&nbsp;<br>
-Optional&nbsp;altchars&nbsp;must&nbsp;be&nbsp;a&nbsp;bytes-like&nbsp;object&nbsp;or&nbsp;ASCII&nbsp;string&nbsp;of&nbsp;length&nbsp;2<br>
-which&nbsp;specifies&nbsp;the&nbsp;alternative&nbsp;alphabet&nbsp;used&nbsp;instead&nbsp;of&nbsp;the&nbsp;'+'&nbsp;and&nbsp;'/'<br>
-characters.<br>
-&nbsp;<br>
-The&nbsp;result&nbsp;is&nbsp;returned&nbsp;as&nbsp;a&nbsp;bytes&nbsp;object.&nbsp;&nbsp;A&nbsp;binascii.Error&nbsp;is&nbsp;raised&nbsp;if<br>
-s&nbsp;is&nbsp;incorrectly&nbsp;padded.<br>
-&nbsp;<br>
-If&nbsp;validate&nbsp;is&nbsp;False&nbsp;(the&nbsp;default),&nbsp;characters&nbsp;that&nbsp;are&nbsp;neither&nbsp;in&nbsp;the<br>
-normal&nbsp;base-64&nbsp;alphabet&nbsp;nor&nbsp;the&nbsp;alternative&nbsp;alphabet&nbsp;are&nbsp;discarded&nbsp;prior<br>
-to&nbsp;the&nbsp;padding&nbsp;check.&nbsp;&nbsp;If&nbsp;validate&nbsp;is&nbsp;True,&nbsp;these&nbsp;non-alphabet&nbsp;characters<br>
-in&nbsp;the&nbsp;input&nbsp;result&nbsp;in&nbsp;a&nbsp;binascii.Error.</tt></dd></dl>
- <dl><dt><a name="-b64encode"><strong>b64encode</strong></a>(s, altchars=None)</dt><dd><tt>Encode&nbsp;the&nbsp;bytes-like&nbsp;object&nbsp;s&nbsp;using&nbsp;Base64&nbsp;and&nbsp;return&nbsp;a&nbsp;bytes&nbsp;object.<br>
-&nbsp;<br>
-Optional&nbsp;altchars&nbsp;should&nbsp;be&nbsp;a&nbsp;byte&nbsp;string&nbsp;of&nbsp;length&nbsp;2&nbsp;which&nbsp;specifies&nbsp;an<br>
-alternative&nbsp;alphabet&nbsp;for&nbsp;the&nbsp;'+'&nbsp;and&nbsp;'/'&nbsp;characters.&nbsp;&nbsp;This&nbsp;allows&nbsp;an<br>
-application&nbsp;to&nbsp;e.g.&nbsp;generate&nbsp;url&nbsp;or&nbsp;filesystem&nbsp;safe&nbsp;Base64&nbsp;strings.</tt></dd></dl>
- <dl><dt><a name="-b85decode"><strong>b85decode</strong></a>(b)</dt><dd><tt>Decode&nbsp;the&nbsp;base85-encoded&nbsp;bytes-like&nbsp;object&nbsp;or&nbsp;ASCII&nbsp;string&nbsp;b<br>
-&nbsp;<br>
-The&nbsp;result&nbsp;is&nbsp;returned&nbsp;as&nbsp;a&nbsp;bytes&nbsp;object.</tt></dd></dl>
- <dl><dt><a name="-b85encode"><strong>b85encode</strong></a>(b, pad=False)</dt><dd><tt>Encode&nbsp;bytes-like&nbsp;object&nbsp;b&nbsp;in&nbsp;base85&nbsp;format&nbsp;and&nbsp;return&nbsp;a&nbsp;bytes&nbsp;object.<br>
-&nbsp;<br>
-If&nbsp;pad&nbsp;is&nbsp;true,&nbsp;the&nbsp;input&nbsp;is&nbsp;padded&nbsp;with&nbsp;b'\0'&nbsp;so&nbsp;its&nbsp;length&nbsp;is&nbsp;a&nbsp;multiple&nbsp;of<br>
-4&nbsp;bytes&nbsp;before&nbsp;encoding.</tt></dd></dl>
- <dl><dt><a name="-decode"><strong>decode</strong></a>(input, output)</dt><dd><tt>Decode&nbsp;a&nbsp;file;&nbsp;input&nbsp;and&nbsp;output&nbsp;are&nbsp;binary&nbsp;files.</tt></dd></dl>
- <dl><dt><a name="-decodebytes"><strong>decodebytes</strong></a>(s)</dt><dd><tt>Decode&nbsp;a&nbsp;bytestring&nbsp;of&nbsp;base-64&nbsp;data&nbsp;into&nbsp;a&nbsp;bytes&nbsp;object.</tt></dd></dl>
- <dl><dt><a name="-encode"><strong>encode</strong></a>(input, output)</dt><dd><tt>Encode&nbsp;a&nbsp;file;&nbsp;input&nbsp;and&nbsp;output&nbsp;are&nbsp;binary&nbsp;files.</tt></dd></dl>
- <dl><dt><a name="-encodebytes"><strong>encodebytes</strong></a>(s)</dt><dd><tt>Encode&nbsp;a&nbsp;bytestring&nbsp;into&nbsp;a&nbsp;bytes&nbsp;object&nbsp;containing&nbsp;multiple&nbsp;lines<br>
-of&nbsp;base-64&nbsp;data.</tt></dd></dl>
- <dl><dt><a name="-standard_b64decode"><strong>standard_b64decode</strong></a>(s)</dt><dd><tt>Decode&nbsp;bytes&nbsp;encoded&nbsp;with&nbsp;the&nbsp;standard&nbsp;Base64&nbsp;alphabet.<br>
-&nbsp;<br>
-Argument&nbsp;s&nbsp;is&nbsp;a&nbsp;bytes-like&nbsp;object&nbsp;or&nbsp;ASCII&nbsp;string&nbsp;to&nbsp;decode.&nbsp;&nbsp;The&nbsp;result<br>
-is&nbsp;returned&nbsp;as&nbsp;a&nbsp;bytes&nbsp;object.&nbsp;&nbsp;A&nbsp;binascii.Error&nbsp;is&nbsp;raised&nbsp;if&nbsp;the&nbsp;input<br>
-is&nbsp;incorrectly&nbsp;padded.&nbsp;&nbsp;Characters&nbsp;that&nbsp;are&nbsp;not&nbsp;in&nbsp;the&nbsp;standard&nbsp;alphabet<br>
-are&nbsp;discarded&nbsp;prior&nbsp;to&nbsp;the&nbsp;padding&nbsp;check.</tt></dd></dl>
- <dl><dt><a name="-standard_b64encode"><strong>standard_b64encode</strong></a>(s)</dt><dd><tt>Encode&nbsp;bytes-like&nbsp;object&nbsp;s&nbsp;using&nbsp;the&nbsp;standard&nbsp;Base64&nbsp;alphabet.<br>
-&nbsp;<br>
-The&nbsp;result&nbsp;is&nbsp;returned&nbsp;as&nbsp;a&nbsp;bytes&nbsp;object.</tt></dd></dl>
- <dl><dt><a name="-urlsafe_b64decode"><strong>urlsafe_b64decode</strong></a>(s)</dt><dd><tt>Decode&nbsp;bytes&nbsp;using&nbsp;the&nbsp;URL-&nbsp;and&nbsp;filesystem-safe&nbsp;Base64&nbsp;alphabet.<br>
-&nbsp;<br>
-Argument&nbsp;s&nbsp;is&nbsp;a&nbsp;bytes-like&nbsp;object&nbsp;or&nbsp;ASCII&nbsp;string&nbsp;to&nbsp;decode.&nbsp;&nbsp;The&nbsp;result<br>
-is&nbsp;returned&nbsp;as&nbsp;a&nbsp;bytes&nbsp;object.&nbsp;&nbsp;A&nbsp;binascii.Error&nbsp;is&nbsp;raised&nbsp;if&nbsp;the&nbsp;input<br>
-is&nbsp;incorrectly&nbsp;padded.&nbsp;&nbsp;Characters&nbsp;that&nbsp;are&nbsp;not&nbsp;in&nbsp;the&nbsp;URL-safe&nbsp;base-64<br>
-alphabet,&nbsp;and&nbsp;are&nbsp;not&nbsp;a&nbsp;plus&nbsp;'+'&nbsp;or&nbsp;slash&nbsp;'/',&nbsp;are&nbsp;discarded&nbsp;prior&nbsp;to&nbsp;the<br>
-padding&nbsp;check.<br>
-&nbsp;<br>
-The&nbsp;alphabet&nbsp;uses&nbsp;'-'&nbsp;instead&nbsp;of&nbsp;'+'&nbsp;and&nbsp;'_'&nbsp;instead&nbsp;of&nbsp;'/'.</tt></dd></dl>
- <dl><dt><a name="-urlsafe_b64encode"><strong>urlsafe_b64encode</strong></a>(s)</dt><dd><tt>Encode&nbsp;bytes&nbsp;using&nbsp;the&nbsp;URL-&nbsp;and&nbsp;filesystem-safe&nbsp;Base64&nbsp;alphabet.<br>
-&nbsp;<br>
-Argument&nbsp;s&nbsp;is&nbsp;a&nbsp;bytes-like&nbsp;object&nbsp;to&nbsp;encode.&nbsp;&nbsp;The&nbsp;result&nbsp;is&nbsp;returned&nbsp;as&nbsp;a<br>
-bytes&nbsp;object.&nbsp;&nbsp;The&nbsp;alphabet&nbsp;uses&nbsp;'-'&nbsp;instead&nbsp;of&nbsp;'+'&nbsp;and&nbsp;'_'&nbsp;instead&nbsp;of<br>
-'/'.</tt></dd></dl>
-</td></tr></table></p><p>
-<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="section">
-<tr bgcolor="#55aa55">
-<td colspan="3" valign="bottom">&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>__all__</strong> = ['encode', 'decode', 'encodebytes', 'decodebytes', 'b64encode', 'b64decode', 'b32encode', 'b32decode', 'b16encode', 'b16decode', 'b85encode', 'b85decode', 'a85encode', 'a85decode', 'standard_b64encode', 'standard_b64decode', 'urlsafe_b64encode', 'urlsafe_b64decode']</td></tr></table>
-</p></body></html>
         </div></article>
       <article class="post">
     <header class="post-header">
@@ -419,6 +263,25 @@ bytes&nbsp;object.&nbsp;&nbsp;The&nbsp;alphabet&nbsp;uses&nbsp;'-'&nbsp;instead&
 <p>东极岛实际上并不是一个正式的地理名称，也不是一个单独的岛屿，而是习惯上对浙江省舟山市普陀区东极镇所辖的所有岛屿的总称，其地理上的正式名称应该是“中街山列岛”。它是电影<a href="https://baike.baidu.com/item/后会无期/12804662" target="_blank" rel="noopener">《后会无期》</a>的重要拍摄地点，也有“海上丽江”之称。</p>
           <div class="read-more">
             <a href="/2019/04/09/dongjidao/" class="read-more-link">Read more..</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2019/04/08/how_to_connect_remote_jupyter/">如何远程连接jupyter notebook</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-04-08
+        </span><span class="post-category">
+            <a href="/categories/tools/">tools</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><h1 id="如何远程连接jupyter-notebook"><a href="#如何远程连接jupyter-notebook" class="headerlink" title="如何远程连接jupyter notebook"></a>如何远程连接jupyter notebook</h1>
+          <div class="read-more">
+            <a href="/2019/04/08/how_to_connect_remote_jupyter/" class="read-more-link">Read more..</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
