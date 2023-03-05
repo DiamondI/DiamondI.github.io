@@ -1,37 +1,43 @@
 <!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>215. Kth Largest Element in an Array</title><meta name="description" content="TODO"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
-<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="215. Kth Largest Element in an ArrayDescriptionFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
-
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="215. Kth Largest Element in an Array
+Description
+Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
 Example 1:
 
-Input: [3,2,1,5,6,4] and k &amp;#x3D; 2 
+Input: [3,2,1,5,6,4] and k = 2 
 Output: 5
 
 Example 2:
 
-Input: [3,2,3,1,2,4,5,5,6] and k &amp;#x3D; 4 
+Input: [3,2,3,1,2,4,5,5,6] and k = 4 
 Output: 4
 
 **Note: **
-You may assume k is always val.."><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="DiamondI's blog" type="application/atom+xml">
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">DiamondI's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">215. Kth Largest Element in an Array</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#215-Kth-Largest-Element-in-an-Array"><span class="toc-text">215. Kth Largest Element in an Array</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-text">Idea</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Quick-Sort"><span class="toc-text">Quick Sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Priority-Queue"><span class="toc-text">Priority Queue</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">215. Kth Largest Element in an Array</h1><time class="has-text-grey" datetime="2023-03-05T15:09:21.165Z">2023-03-05</time><article class="mt-2 post-content"><h1 id="215-Kth-Largest-Element-in-an-Array"><a href="#215-Kth-Largest-Element-in-an-Array" class="headerlink" title="215. Kth Largest Element in an Array"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/kth-largest-element-in-an-array/description/">215. Kth Largest Element in an Array</a></h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.</p>
+You may assume k is always valid, 1 ≤ k.."><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="DiamondI's blog" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">DiamondI's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">215. Kth Largest Element in an Array</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">215. Kth Largest Element in an Array</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-text">Idea</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Quick-Sort"><span class="toc-text">Quick Sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Priority-Queue"><span class="toc-text">Priority Queue</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">215. Kth Largest Element in an Array</h1><time class="has-text-grey" datetime="2023-03-05T15:09:21.165Z">2023-03-05</time><article class="mt-2 post-content"><h1><a target="_blank" rel="noopener" href="https://leetcode.com/problems/kth-largest-element-in-an-array/description/">215. Kth Largest Element in an Array</a></h1>
+<h2 id="Description">Description</h2>
+<p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.</p>
 <span id="more"></span>
-
 <p><strong>Example 1:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> [3,2,1,5,6,4] and k &#x3D; 2 <br>
+<p><strong>Input:</strong> [3,2,1,5,6,4] and k = 2 <br><br>
 <strong>Output:</strong> 5</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> [3,2,3,1,2,4,5,5,6] and k &#x3D; 4 <br>
+<p><strong>Input:</strong> [3,2,3,1,2,4,5,5,6] and k = 4 <br><br>
 <strong>Output:</strong> 4</p>
 </blockquote>
 <p>**Note: **</p>
 <p>You may assume k is always valid, 1 ≤ k ≤ array’s length.</p>
-<h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><h3 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h3><p>We can partition the array like quick-sort. Use a pivot to partition the array to two parts, greater than pivot and less than pivot. If there are k-1 elements greater than pivot, then we have just found the k-th largest element. If there are less than k-1 elements greater than pivot, then we can continue to partition in right part. Otherwise, we continue to partition in left part. When we found there’re k-1 elements in the left part, we have finished our work.</p>
-<h3 id="Priority-Queue"><a href="#Priority-Queue" class="headerlink" title="Priority Queue"></a>Priority Queue</h3><p>Just add all elements in the array to a priority_queue, then pop k-1 elements. And the top element is what we want.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="cpp">// Quick Sort
+<h2 id="Idea">Idea</h2>
+<h3 id="Quick-Sort">Quick Sort</h3>
+<p>We can partition the array like quick-sort. Use a pivot to partition the array to two parts, greater than pivot and less than pivot. If there are k-1 elements greater than pivot, then we have just found the k-th largest element. If there are less than k-1 elements greater than pivot, then we can continue to partition in right part. Otherwise, we continue to partition in left part. When we found there’re k-1 elements in the left part, we have finished our work.</p>
+<h3 id="Priority-Queue">Priority Queue</h3>
+<p>Just add all elements in the array to a priority_queue, then pop k-1 elements. And the top element is what we want.</p>
+<h2 id="Solution">Solution</h2>
+<pre><code class="language-cpp">// Quick Sort
 class Solution &#123;
 public:
     int findKthLargest(vector&lt;int&gt;&amp; nums, int k) &#123;
@@ -63,7 +69,7 @@ public:
     &#125;
 &#125;;
 </code></pre>
-<pre><code class="cpp">// Priority Queue
+<pre><code class="language-cpp">// Priority Queue
 class Solution &#123;
 public:
     int findKthLargest(vector&lt;int&gt;&amp; nums, int k) &#123;

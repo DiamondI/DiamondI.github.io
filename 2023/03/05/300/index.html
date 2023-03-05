@@ -1,24 +1,26 @@
 <!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>300. Longest Increasing Subsequence</title><meta name="description" content="TODO"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
-<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="300. Longest Increasing SubsequenceDescriptionGiven an unsorted array of integers, find the length of longest increasing subsequence. (For this question, it’s stricly increasing.)
-
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="300. Longest Increasing Subsequence
+Description
+Given an unsorted array of integers, find the length of longest increasing subsequence. (For this question, it’s stricly increasing.)
 
 Example:
 
 Input: [10,9,2,5,3,7,101,18] 
 Output: 4 
-Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4. 
+Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
 
 Note:
 
 There may be more than on.."><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="DiamondI's blog" type="application/atom+xml">
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">DiamondI's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">300. Longest Increasing Subsequence</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#300-Longest-Increasing-Subsequence"><span class="toc-text">300. Longest Increasing Subsequence</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-text">Idea</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-O-n2"><span class="toc-text">1. O(n2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-O-nlogn"><span class="toc-text">2. O(nlogn)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">300. Longest Increasing Subsequence</h1><time class="has-text-grey" datetime="2023-03-05T15:09:21.168Z">2023-03-05</time><article class="mt-2 post-content"><h1 id="300-Longest-Increasing-Subsequence"><a href="#300-Longest-Increasing-Subsequence" class="headerlink" title="300. Longest Increasing Subsequence"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-increasing-subsequence/description/">300. Longest Increasing Subsequence</a></h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an unsorted array of integers, find the length of longest increasing subsequence. (For this question, it’s stricly increasing.)</p>
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">DiamondI's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">300. Longest Increasing Subsequence</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">300. Longest Increasing Subsequence</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-text">Idea</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-O-n-sup-2-sup"><span class="toc-text">1. O(n2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-O-nlogn"><span class="toc-text">2. O(nlogn)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">300. Longest Increasing Subsequence</h1><time class="has-text-grey" datetime="2023-03-05T15:09:21.168Z">2023-03-05</time><article class="mt-2 post-content"><h1><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-increasing-subsequence/description/">300. Longest Increasing Subsequence</a></h1>
+<h2 id="Description">Description</h2>
+<p>Given an unsorted array of integers, find the length of longest increasing subsequence. (For this question, it’s stricly increasing.)</p>
 <span id="more"></span>
-
 <p><strong>Example:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> [10,9,2,5,3,7,101,18] <br>
-<strong>Output:</strong> 4 <br>
-<strong>Explanation:</strong> The longest increasing subsequence is [2,3,7,101], therefore the length is 4. </p>
+<p><strong>Input:</strong> [10,9,2,5,3,7,101,18] <br><br>
+<strong>Output:</strong> 4 <br><br>
+<strong>Explanation:</strong> The longest increasing subsequence is [2,3,7,101], therefore the length is 4.</p>
 </blockquote>
 <p><strong>Note:</strong></p>
 <ul>
@@ -27,21 +29,25 @@ There may be more than on.."><meta name="generator" content="Hexo 6.3.0"><link r
 </ul>
 <p><strong>Follow up:</strong></p>
 <p>Could you improve it to O(nlogn) time complexity?</p>
-<h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><p>DP. </p>
-<h3 id="1-O-n2"><a href="#1-O-n2" class="headerlink" title="1. O(n2)"></a>1. O(n<sup>2</sup>)</h3><p>Consider that <code>dp[i]</code> represents the longest increasing subsequence ending at <code>i</code>. First initiate the array with value <code>1</code>. Then for every number <code>j</code> less than <code>i</code>:</p>
+<h2 id="Idea">Idea</h2>
+<p>DP.</p>
+<h3 id="1-O-n-sup-2-sup">1. O(n<sup>2</sup>)</h3>
+<p>Consider that <code>dp[i]</code> represents the longest increasing subsequence ending at <code>i</code>. First initiate the array with value <code>1</code>. Then for every number <code>j</code> less than <code>i</code>:</p>
 <ul>
 <li>If <code>dp[j] &lt; dp[i]</code>, <code>dp[i] = max(dp[i], dp[j] + 1)</code> (because <code>dp[i]</code> contributes to LIS)</li>
 <li>otherwise, <code>dp[i] = dp[i]</code></li>
 <li>Finally, the result is the maximum of array <code>dp</code></li>
 </ul>
 <p>The time complexity is O(n<sup>2</sup>)</p>
-<h3 id="2-O-nlogn"><a href="#2-O-nlogn" class="headerlink" title="2. O(nlogn)"></a>2. O(nlogn)</h3><p>Consider we maintain a vector <code>dp</code> and <code>dp[i]</code> means the least value for LIS with length (i + 1).</p>
+<h3 id="2-O-nlogn">2. O(nlogn)</h3>
+<p>Consider we maintain a vector <code>dp</code> and <code>dp[i]</code> means the least value for LIS with length (i + 1).</p>
 <ul>
 <li>If current num is greater than any number in <code>dp</code>, push it to <code>dp</code></li>
 <li>insert current num to the the <code>lower_bound</code> index.</li>
 </ul>
 <p>Notice that <code>dp</code> is actually ordered, an we can search num in O(logn) time. Then the total time complexity is O(nlogn). And the result is the size of <code>dp</code>.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="cpp">// O(n^2)
+<h2 id="Solution">Solution</h2>
+<pre><code class="language-cpp">// O(n^2)
 class Solution &#123;
 public:
     int lengthOfLIS(vector&lt;int&gt;&amp; nums) &#123;
@@ -64,7 +70,7 @@ public:
     &#125;
 &#125;;
 </code></pre>
-<pre><code class="cpp">//O(nlogn)
+<pre><code class="language-cpp">//O(nlogn)
 class Solution &#123;
 public:
     int lengthOfLIS(vector&lt;int&gt;&amp; nums) &#123;
