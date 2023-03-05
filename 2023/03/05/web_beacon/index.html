@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Web beacon 初探 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Web beacon 初探缘由近来读过不少服务提供商的隐私政策了，基本上每个都提到了Web beacon这个名词，而且通常会和Cookie一并提及。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web beacon 初探">
+<meta property="og:url" content="http://example.com/2023/03/05/web_beacon/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Web beacon 初探缘由近来读过不少服务提供商的隐私政策了，基本上每个都提到了Web beacon这个名词，而且通常会和Cookie一并提及。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-05T15:09:21.183Z">
+<meta property="article:modified_time" content="2023-03-05T00:01:26.254Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-web_beacon" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/03/05/web_beacon/" class="article-date">
+  <time datetime="2023-03-05T15:09:21.183Z" itemprop="datePublished">2023-03-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Web beacon 初探
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Web-beacon-初探"><a href="#Web-beacon-初探" class="headerlink" title="Web beacon 初探"></a>Web beacon 初探</h1><h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>近来读过不少服务提供商的隐私政策了，基本上每个都提到了Web beacon这个名词，而且通常会和Cookie一并提及。</p>
+<span id="more"></span>
+
+<p>比如豆瓣的隐私政策：</p>
+<blockquote>
+<p>除 Cookie 外，我们还会在网站上使用<strong>网站信标</strong>和像素标签等其他同类技术。例如，我们向你发送的电子邮件可能含有链接至我们网站内容的点击URL。如果你点击该链接，我们则会跟踪此次点击，帮助我们了解你的产品或服务偏好并改善客户服务。网站信标通常是一种嵌入到网站或电子邮件中的透明图像。借助于电子邮件中的像素标签，我们能够获知电子邮件是否被打开。</p>
+</blockquote>
+<p>对于这个名词很陌生的我，便决定搞搞清楚它到底是什么东西。</p>
+<h2 id="释义"><a href="#释义" class="headerlink" title="释义"></a>释义</h2><p>Web beacon，中文称<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%A0%87/2050262?fr=aladdin">网络信标</a>，又称网页臭虫（Web bug），是可以暗藏在任何网页元素或邮件内的1像素大小的透明GIF或PNG图片，常用来收集目标电脑用户的上网习惯等数据，并将这些数据写入Cookie。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>豆瓣的隐私政策中说，网络信标可以检测所发送的电子邮件是否被打开。那实现这个的原理是什么呢？</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>在邮件中嵌入<code>img</code>标签，并添加<code>src</code>属性，那么当该邮件被打开的时候，<code>src</code>的值——一个指定的url，将会被访问。由此，被访问的url，将会得知该邮件被打开过。</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p><strong>首先</strong>打开一个terminal，运行如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8000</span><br></pre></td></tr></table></figure>
+
+<p>该命令的含义是用Python在8000端口号创建一个SimpleHTTPServer，可以通过<code>http://localhost:8000</code>访问。当被访问时，terminal上会打印一行log信息。</p>
+<p><strong>之后</strong>，用自己的A邮箱发邮件给B邮箱，内容是：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;http://localhost:8000&quot;</span> <span class="attr">height</span>=<span class="string">&quot;1&quot;</span> <span class="attr">width</span>=<span class="string">&quot;1&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面这个像素为1的代码即为网络信标。</p>
+<p>【<em>注意：</em> 需要用HTML编辑模式才行，我实验的时候是使用的QQ邮箱，它可以使用HTML编辑模式】</p>
+<p><strong>最后</strong>，B邮箱收到A邮箱发来的邮件，点开该邮件，发现terminal上新打印了一行log信息。重新点开该邮件，发现又新打印了一行log信息。这说明，网络信标确实可以检测邮件是否被打开。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上面的只是最基本的用法，但即便是如此，我也被这样的功能所震撼。更深入的用法，可以结合Cookie来使用，或者是用较新的Web技术——Beacon API（信标API）。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/05/web_beacon/" data-id="clevj5acw001rsstlb46y5adt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/05/%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC%E8%A7%82%E5%BD%B1%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          《海市蜃楼》观影记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/05/roger/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">罗杰疑案——麻将的bug</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Misc/">Misc</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/movies/">movies</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%85%E6%B8%B8/">旅游</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/05/you-will-all-confirm/">Puzzle 1 - You Will All Confirm</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC%E8%A7%82%E5%BD%B1%E8%AE%B0/">《海市蜃楼》观影记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/web_beacon/">Web beacon 初探</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/roger/">罗杰疑案——麻将的bug</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/priority_queue/">Priority Queue</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

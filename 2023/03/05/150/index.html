@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>150. Evaluate Reverse Polish Notation | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="150. Evaluate Reverse Polish NotationDescriptionEvaluate the value of an arithmetic expression in Reverse Polish Notation(or 逆波兰表达式).">
+<meta property="og:type" content="article">
+<meta property="og:title" content="150. Evaluate Reverse Polish Notation">
+<meta property="og:url" content="http://example.com/2023/03/05/150/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="150. Evaluate Reverse Polish NotationDescriptionEvaluate the value of an arithmetic expression in Reverse Polish Notation(or 逆波兰表达式).">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-05T15:09:21.158Z">
+<meta property="article:modified_time" content="2023-03-05T00:01:26.248Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-150" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/03/05/150/" class="article-date">
+  <time datetime="2023-03-05T15:09:21.158Z" itemprop="datePublished">2023-03-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      150. Evaluate Reverse Polish Notation
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="150-Evaluate-Reverse-Polish-Notation"><a href="#150-Evaluate-Reverse-Polish-Notation" class="headerlink" title="150. Evaluate Reverse Polish Notation"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/evaluate-reverse-polish-notation/description/">150. Evaluate Reverse Polish Notation</a></h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Evaluate the value of an arithmetic expression in <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation</a>(or <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F">逆波兰表达式</a>).</p>
+<span id="more"></span>
+
+<p>Valid operators are <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>. Each operand may be an integer or another expression.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Division between two integers should truncate toward zero.</li>
+<li>The given RPN expression is always valid. That means the expression would always evaluate to a result and there won’t be any divide by zero operation.</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> [“2”, “1”, “+”, “3”, “*“] <br><br><strong>Output:</strong> 9 <br><br><strong>Explanation:</strong> ((2 + 1) * 3) &#x3D; 9</p>
+</blockquote>
+<p><strong>Example 2:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> [“4”, “13”, “5”, “&#x2F;“, “+”] <br><br><strong>Output:</strong> 6 <br><br><strong>Explanation:</strong> (4 + (13 &#x2F; 5)) &#x3D; 6</p>
+</blockquote>
+<p><strong>Example 3:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> [“10”, “6”, “9”, “3”, “+”, “-11”, “*“, “&#x2F;“, “*“, “17”, “+”, “5”, “+”] <br><br><strong>Output:</strong> 22 <br><br><strong>Explanation:</strong> <br><br>  ((10 * (6 &#x2F; ((9 + 3) * -11))) + 17) + 5 <br><br>&#x3D; ((10 * (6 &#x2F; (12 * -11))) + 17) + 5 <br><br>&#x3D; ((10 * (6 &#x2F; -132)) + 17) + 5 <br><br>&#x3D; ((10 * 0) + 17) + 5 <br><br>&#x3D; (0 + 17) + 5 <br><br>&#x3D; 17 + 5 <br><br>&#x3D; 22</p>
+</blockquote>
+<h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><p>Stack.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">evalRPN</span><span class="params">(vector&lt;string&gt;&amp; tokens)</span> </span>&#123;</span><br><span class="line">        stack&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span> &amp;i : tokens) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="string">&quot;+&quot;</span>) &#123;</span><br><span class="line">                <span class="type">int</span> a&#123;st.<span class="built_in">top</span>()&#125;;</span><br><span class="line">                st.<span class="built_in">pop</span>();</span><br><span class="line">                <span class="type">int</span> b&#123;st.<span class="built_in">top</span>()&#125;;</span><br><span class="line">                st.<span class="built_in">pop</span>();</span><br><span class="line">                st.<span class="built_in">push</span>(b + a);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="string">&quot;-&quot;</span>) &#123;</span><br><span class="line">                <span class="type">int</span> a&#123;st.<span class="built_in">top</span>()&#125;;</span><br><span class="line">                st.<span class="built_in">pop</span>();</span><br><span class="line">                <span class="type">int</span> b&#123;st.<span class="built_in">top</span>()&#125;;</span><br><span class="line">                st.<span class="built_in">pop</span>();</span><br><span class="line">                st.<span class="built_in">push</span>(b - a);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="string">&quot;*&quot;</span>) &#123;</span><br><span class="line">                <span class="type">int</span> a&#123;st.<span class="built_in">top</span>()&#125;;</span><br><span class="line">                st.<span class="built_in">pop</span>();</span><br><span class="line">                <span class="type">int</span> b&#123;st.<span class="built_in">top</span>()&#125;;</span><br><span class="line">                st.<span class="built_in">pop</span>();</span><br><span class="line">                st.<span class="built_in">push</span>(b * a);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="string">&quot;/&quot;</span>) &#123;</span><br><span class="line">                <span class="type">int</span> a&#123;st.<span class="built_in">top</span>()&#125;;</span><br><span class="line">                st.<span class="built_in">pop</span>();</span><br><span class="line">                <span class="type">int</span> b&#123;st.<span class="built_in">top</span>()&#125;;</span><br><span class="line">                st.<span class="built_in">pop</span>();</span><br><span class="line">                st.<span class="built_in">push</span>(b / a);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                st.<span class="built_in">push</span>(<span class="built_in">stoi</span>(i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> st.<span class="built_in">top</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/05/150/" data-id="clevj5acl000csstl3auf0aje" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/05/152/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          152. Maximum Product Subarray
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/05/149/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">149. Max Points on a Line</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Misc/">Misc</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/movies/">movies</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%85%E6%B8%B8/">旅游</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/05/you-will-all-confirm/">Puzzle 1 - You Will All Confirm</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC%E8%A7%82%E5%BD%B1%E8%AE%B0/">《海市蜃楼》观影记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/web_beacon/">Web beacon 初探</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/roger/">罗杰疑案——麻将的bug</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/priority_queue/">Priority Queue</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

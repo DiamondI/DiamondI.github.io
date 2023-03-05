@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>如何远程连接jupyter notebook | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如何远程连接jupyter notebook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何远程连接jupyter notebook">
+<meta property="og:url" content="http://example.com/2023/03/05/how_to_connect_remote_jupyter/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="如何远程连接jupyter notebook">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-05T15:09:21.177Z">
+<meta property="article:modified_time" content="2023-03-05T00:01:26.252Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-how_to_connect_remote_jupyter" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/03/05/how_to_connect_remote_jupyter/" class="article-date">
+  <time datetime="2023-03-05T15:09:21.177Z" itemprop="datePublished">2023-03-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何远程连接jupyter notebook
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="如何远程连接jupyter-notebook"><a href="#如何远程连接jupyter-notebook" class="headerlink" title="如何远程连接jupyter notebook"></a>如何远程连接jupyter notebook</h1><span id="more"></span>
+
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>首先，保证远程的服务器和自己的本机上都安装有jupyter notebook。</li>
+<li>在远程的服务器上，在终端上运行如下命令：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --no-browser --port=8889</span><br><span class="line"># --port 指定一个自己喜欢的端口号</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>在自己的本机打开一个终端，并运行如下命令：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh -N -f -L localhost:8888:localhost:8889 username@your_remote_host_name -p 22</span><br><span class="line"></span><br><span class="line"># 第一个localhost:后面跟的是本机打开的端口，第二个localhost:后面跟的是远程服务器上打开的端口；</span><br><span class="line"># -p参数后面是服务器开放给ssh连接的端口号，若不指定的话，默认ssh端口号是22</span><br><span class="line"># 请修改username并确保那是自己真实的用户名，并且将your_remote_host_name修改为远程服务器的ip地址</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>运行上述命令后，可能会要求输入<code>ssh</code>连接服务器的密码，正常输入即可。</li>
+<li>在本机上打开任意一个浏览器，键入<code>localhost:8888</code>（须与<code>ssh</code>命令中第一个<code>localhost</code>指定的端口对应）访问即可。</li>
+</ol>
+<h2 id="可能遇到的问题及我的解决方法"><a href="#可能遇到的问题及我的解决方法" class="headerlink" title="可能遇到的问题及我的解决方法"></a>可能遇到的问题及我的解决方法</h2><ol>
+<li>在本机打开之后，界面上要求输入验证，但是输入token之后仍然要求输入token，并且不停地循环。</li>
+</ol>
+<p>解决方案：运行jupyter notebook的时候设置无须密码登录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --no-browser --port=8889 --NotebookApp.allow_password_change=False</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/05/how_to_connect_remote_jupyter/" data-id="clevj5acu001fsstlhtfv9keb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/05/ltcd_contest_129/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          LeetCode Weekly Contest 129
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/05/happy_birthday/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">工藤新一，生日快乐！</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Misc/">Misc</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/movies/">movies</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%85%E6%B8%B8/">旅游</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/05/you-will-all-confirm/">Puzzle 1 - You Will All Confirm</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC%E8%A7%82%E5%BD%B1%E8%AE%B0/">《海市蜃楼》观影记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/web_beacon/">Web beacon 初探</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/roger/">罗杰疑案——麻将的bug</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/priority_queue/">Priority Queue</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

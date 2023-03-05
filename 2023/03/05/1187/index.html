@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>LeetCode - 1187. Make Array Strictly Increasing | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1187. Make Array Strictly IncreasingDescriptionGiven two integer arrays arr1 and arr2, return the minimum number of operations (possibly zero) needed to make arr1 strictly increasing. In one operation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode - 1187. Make Array Strictly Increasing">
+<meta property="og:url" content="http://example.com/2023/03/05/1187/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1187. Make Array Strictly IncreasingDescriptionGiven two integer arrays arr1 and arr2, return the minimum number of operations (possibly zero) needed to make arr1 strictly increasing. In one operation">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-05T15:09:21.153Z">
+<meta property="article:modified_time" content="2023-03-05T00:01:26.246Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-1187" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/03/05/1187/" class="article-date">
+  <time datetime="2023-03-05T15:09:21.153Z" itemprop="datePublished">2023-03-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      LeetCode - 1187. Make Array Strictly Increasing
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1187-Make-Array-Strictly-Increasing"><a href="#1187-Make-Array-Strictly-Increasing" class="headerlink" title="1187. Make Array Strictly Increasing"></a><a target="_blank" rel="noopener" href="https://leetcode.com/contest/weekly-contest-153/problems/make-array-strictly-increasing/">1187. Make Array Strictly Increasing</a></h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two integer arrays <code>arr1</code> and <code>arr2</code>, return the minimum number of operations (possibly zero) needed to make <code>arr1</code> strictly increasing.</p>
+<p>In one operation, you can choose two indices <code>0 &lt;= i &lt; arr1.length</code> and <code>0 &lt;= j &lt; arr2.length</code> and do the assignment <code>arr1[i] = arr2[j]</code>.</p>
+<p>If there is no way to make <code>arr1</code> strictly increasing, return <code>-1</code>.</p>
+<span id="more"></span>
+
+<h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><p><strong>Intuition:</strong></p>
+<p>For any operation, we need to consider the smallest element in <code>arr2</code>. Thus, we sort the <code>arr2</code> first.</p>
+<p><strong>Core idea:</strong></p>
+<p>Run dfs with two branches:</p>
+<ol>
+<li>Keep the current element in <code>arr1</code></li>
+<li>Add one replacement</li>
+</ol>
+<p>Finally return the minimum of these branches.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">const</span> <span class="type">static</span> <span class="type">int</span> max_n = <span class="number">2001</span>;</span><br><span class="line">    <span class="type">int</span> dp[max_n][max_n] = &#123;&#125;;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr1, vector&lt;<span class="type">int</span>&gt;&amp; arr2, <span class="type">int</span> index1, <span class="type">int</span> index2, <span class="type">int</span> prev)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (index1 &gt;= arr1.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        index2 = <span class="built_in">upper_bound</span>(<span class="built_in">begin</span>(arr2) + index2, <span class="built_in">end</span>(arr2), prev) - <span class="built_in">begin</span>(arr2);</span><br><span class="line">        <span class="type">int</span> r1 = max_n, r2 = max_n;</span><br><span class="line">        <span class="keyword">if</span> (!dp[index1][index2]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index2 &lt; arr2.<span class="built_in">size</span>()) &#123;</span><br><span class="line">                r2 = <span class="number">1</span> + <span class="built_in">dfs</span>(arr1, arr2, index1 + <span class="number">1</span>, index2, arr2[index2]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (prev &lt; arr1[index1]) &#123;</span><br><span class="line">                r1 = <span class="built_in">dfs</span>(arr1, arr2, index1 + <span class="number">1</span>, index2, arr1[index1]);</span><br><span class="line">            &#125;</span><br><span class="line">            dp[index1][index2] = <span class="built_in">min</span>(r1, r2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[index1][index2];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">makeArrayIncreasing</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr1, vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="function">std::set&lt;<span class="type">int</span>&gt; <span class="title">aset</span><span class="params">(arr.begin(), arr.end())</span></span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr2</span><span class="params">(aset.begin(), aset.end())</span></span>;</span><br><span class="line">        <span class="type">int</span> res = <span class="built_in">dfs</span>(arr1, arr2, <span class="number">0</span>, <span class="number">0</span>, INT_MIN);</span><br><span class="line">        <span class="keyword">return</span> res == max_n ? <span class="number">-1</span> : res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/05/1187/" data-id="clevj5acd0001sstlc5z271u4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/05/143/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          143. Reorder List
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/05/115/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">115. Distinct Subsequences</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Misc/">Misc</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/movies/">movies</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%85%E6%B8%B8/">旅游</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/05/you-will-all-confirm/">Puzzle 1 - You Will All Confirm</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC%E8%A7%82%E5%BD%B1%E8%AE%B0/">《海市蜃楼》观影记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/web_beacon/">Web beacon 初探</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/roger/">罗杰疑案——麻将的bug</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/05/priority_queue/">Priority Queue</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
