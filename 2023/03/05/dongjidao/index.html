@@ -1,8 +1,220 @@
-{%- extends "_layout.swig" -%}
-{%- import '_macro/post.swig' as post_template -%}
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-{%- block title -%} {{ page.title }} - {{ config.title }} {%- endblock -%}
 
-{%- block content -%}
-  {{ post_template.render(page) }}
-{%- endblock -%}
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="东极岛之旅"/><link rel="alternate" href="/atom.xml" title="DiamondI's blog" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="http://diamondi.github.io/2023/03/05/dongjidao/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" /><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true,"latex":true};
+</script>
+
+    <title>东极岛之旅 - DiamondI's blog</title>
+  <meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">DiamondI's blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">DiamondI's blog</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            Categories
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">东极岛之旅
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-03-05
+        </span><span class="post-category">
+            <a href="/categories/%E6%97%85%E6%B8%B8/">旅游</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%9C%E6%9E%81%E5%B2%9B%E4%B9%8B%E6%97%85"><span class="toc-text">东极岛之旅</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%9C%E6%9E%81%E9%95%87"><span class="toc-text">东极镇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E7%A8%8B"><span class="toc-text">行程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%88%9F%E5%B1%B1"><span class="toc-text">舟山</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%9C%E7%A6%8F%E5%B1%B1"><span class="toc-text">东福山</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%8F%E5%A6%82%E4%B8%9C%E6%B5%B7"><span class="toc-text">福如东海</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B1%A1%E9%BC%BB%E5%B3%B0"><span class="toc-text">象鼻峰</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BD%E4%BA%91%E5%AE%AB"><span class="toc-text">白云宫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E5%B1%B1%E8%A7%82%E6%97%A5%E8%90%BD"><span class="toc-text">下山观日落</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%99%E5%AD%90%E6%B9%96"><span class="toc-text">庙子湖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><h1 id="东极岛之旅"><a href="#东极岛之旅" class="headerlink" title="东极岛之旅"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%9C%E6%9E%81%E5%B2%9B/3293952">东极岛</a>之旅</h1><p>清明节，同几个小伙伴一起到东极岛游玩。幸运的是清明无雨，我们也得以玩得尽兴。</p>
+<p>东极岛实际上并不是一个正式的地理名称，也不是一个单独的岛屿，而是习惯上对浙江省舟山市普陀区东极镇所辖的所有岛屿的总称，其地理上的正式名称应该是“中街山列岛”。它是电影<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%90%8E%E4%BC%9A%E6%97%A0%E6%9C%9F/12804662">《后会无期》</a>的重要拍摄地点，也有“海上丽江”之称。</p>
+<span id="more"></span>
+
+<p>说来惭愧，《后会无期》这部电影，我是去电影院看的，然而在这次出行前对“东极岛”毫无印象。我大概是看了“假的电影”😂。</p>
+<h2 id="东极镇"><a href="#东极镇" class="headerlink" title="东极镇"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%9C%E6%9E%81%E9%95%87">东极镇</a></h2><p>东极镇地处舟山群岛最东端，距沈家门渔港约45.5公里，位于东径122.4°，北纬30.1°之间。东至两兄弟屿接东海（12海里外为公海），南至黄大洋接洋鞍渔场，西至岱巨洋，北至嵊山渔场，陆域面积为11.7平方公里，海域面积约500平方公里，共有28个大小岛屿和108块礁组成。其中<strong>庙子湖</strong>、青浜、黄兴、<strong>东福山</strong>为四个住人岛，庙子湖岛陆域面积为2.638平方公里，青浜岛陆域面积为1.408平方公里，黄兴岛陆域面积为2.437平方公里，东福山陆域面积2.953平方公里，镇政府驻庙子湖岛，下辖一个社区一个村四个经济合作社。</p>
+<h2 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h2><p>由于时间紧张，这次只到了四个住人岛中的<strong>东福山</strong>和<strong>庙子湖</strong>：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1g1w5r92pu1j319e06ujv5.jpg" alt="行程"></p>
+<p><strong>注：</strong> 从流程图中会觉得庙子湖比东福山更远，实际上我们是先到了更远的东福山，然后在回程的时候才到庙子湖游玩。</p>
+<p>不得不说，六个小时左右的大巴真的是叫人难受，万幸的是没有晕车到吐出来😝。而在船上的两小时也感觉晃得不行，不过总体来说，虽然乘坐交通工具坐到精疲力竭，但是也没有出行前想象中的那么可怕😁，一路上睡过来😪也还算平静。</p>
+<h3 id="舟山"><a href="#舟山" class="headerlink" title="舟山"></a>舟山</h3><p>第一天决定在舟山暂住一晚，晚上在住宿处附近的CBD里的一家叫“涌上外婆桥”的饭馆吃饭。似乎是同行的小伙伴在其他地方吃过觉得还不错，因此推荐了那里。味道确实挺不错的，基本上每上一道菜，那道菜便会被立马“扫荡”一空。或许也和坐了一天的大巴，真的饥肠辘辘有关吧！</p>
+<p>吃过晚饭之后，我们一路走回住宿的地方，路程大概有3km左右。其间路过了一座很长的桥，这座桥的长度估摸着有1.5~2km。桥边有一个水库，不过下面水似乎都干了，大概海边的淡水资源确实紧缺？以及不知道为什么，大晚上的，桥上有一半的路上没有亮路灯。前一半有路灯的路上，几个人边聊天边散步，很是愉快；到了后半没有路灯的路上，空气中就突然增添了一些紧张的气息😨。嘛，不过几人抱团能出什么岔子呢？总不会走着走着少一个人吧Σ( ° △ °|||)︴</p>
+<h3 id="东福山"><a href="#东福山" class="headerlink" title="东福山"></a>东福山</h3><p>第二天坐船到东福山上的时候，已然是中午了。午饭是随意找了一个大排档解决的。点的菜也很随意——什么海鲜炒饭、海鲜炒年糕之类的，但是味道却蛮不错的呢！不过这家大排档有个很有趣的特点：每道菜都会放一些胡萝卜丝儿。不知道是不是最近胡萝卜降价了😯。</p>
+<p>午饭后，我们稍作休息后便决定绕岛一圈，毕竟东福山陆域面积才2.95平方公里而已。在岛上随处可见的路牌上，可以看到很明显的三个景点：福如东海、象鼻峰和白云宫。因此我们决定看看这三个景点。</p>
+<h4 id="福如东海"><a href="#福如东海" class="headerlink" title="福如东海"></a>福如东海</h4><p>福如东海，多么玄学的名字！当历经千辛万苦抵达时，发现不过是一块石头上写着红色的“福”字罢了&#x3D;。&#x3D;</p>
+<p>不过该景点附近风倒是很大，险些把我吹傻了😱。</p>
+<h4 id="象鼻峰"><a href="#象鼻峰" class="headerlink" title="象鼻峰"></a>象鼻峰</h4><p>福如东海到象鼻峰的路上有4km左右，本以为到海岛上是享受海滩的感觉的，没想到一路上都在爬山，还真有踏青的感觉。象鼻峰最高处估摸着离海面有80米高，有位胆子大的游客竟然敢在毫无防护装置的情况下爬上象鼻峰拍照。有恐高症的我，这样的事情连想都不敢想。若是稍有不慎，掉落下去，后果真是不堪设想。</p>
+<h4 id="白云宫"><a href="#白云宫" class="headerlink" title="白云宫"></a>白云宫</h4><p>经过两个多小时的爬山，我们已经很疲惫了，并不想看白云宫，只想下山回到住宿处。但离开象鼻峰后的我们，不愿意走回头路，于是按着路牌的指示，走了其他的路，寄希望于能够离开崎岖的山路重返平坦的大路。</p>
+<p>但我们走的这条路，却同样也是通往白云宫的路。路上遇到一个岔路口，路口的路牌上面有之前游客写的“上不通”、“下不通”、“上下都不通”（真是调皮的游客啊，那到底哪个是对的呢？）。正当我们准备先向上走的时候，从上面下来了一对情侣，告诉我们上面没有路了（看来往下走是对的）。于是我们便和他们一起往下面走。</p>
+<p>又经过几十分钟里在山路上的上上下下曲曲折折，我们终于重新回到了平坦的大路上，并且发现，大路与山路的交界处便是白云宫。总结起来，我们最终还是逆时针，绕着岛上的三个景点兜了一圈呢。</p>
+<h4 id="下山观日落"><a href="#下山观日落" class="headerlink" title="下山观日落"></a>下山观日落</h4><p>下山的途中，恰巧撞上日落时分，海边的日落景色真是美啊！</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1g1wh6xwhqaj31hc0psn2h.jpg" alt="日落景色1"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1g1wh7hdhcbj30ps1hcgrn.jpg" alt="日落景色2"></p>
+<h3 id="庙子湖"><a href="#庙子湖" class="headerlink" title="庙子湖"></a>庙子湖</h3><p>第三天到达庙子湖的时候是上午。本来庙子湖有个博物馆的，本可以到那里去游览一番。但是不知道为什么，那天博物馆居然没有开门，真是遗憾啊！又因为岛上太阳太毒，我们前一天爬山又已经消磨了许多精力，我们实在不愿意再寻找景点了。最后我们找了一家咖啡酒馆，在那里点了几杯冷饮，坐在一起愉快地玩起了桌游。一直到中午回程的船出发才离开庙子湖。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这次旅行中给同行的一位帅气的小哥哥拍了两张照片，获得了小伙伴们的一致好评，以至于打趣说给我“加鸡腿”。老实说我不怎么拍照也不太会拍照，这次能拍出好看的照片，真真是因为运气好、风景美以及模特气质佳呀！</p>
+<p>突然想起来，与我同行的五位小伙伴是同一个班的，而我都不是他们班的诶！真是奇妙的缘分😆！不过也经常串寝，不是同班胜似同班吧！</p>
+<p>希望将来还能一直保持联系，保持这份如东极岛海水般澄澈的友谊！</p>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="http://diamondi.github.io">DiamondI</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="http://diamondi.github.io/2023/03/05/dongjidao/">http://diamondi.github.io/2023/03/05/dongjidao/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        
+        <nav class="post-nav"><a class="prev" href="/2023/03/05/fib_memoization/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">fib recursion-memoization 装饰器实现</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2023/03/05/big/">
+        <span class="next-text nav-default">Misc-9-big from hackme.inndy.tw</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://github.com/DiamondI" class="iconfont icon-github" title="github"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2015 - 2023<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">DiamondI</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://diamondi.github.io/2023/03/05/dongjidao/';
+        this.page.identifier = '2023/03/05/dongjidao/';
+        this.page.title = '东极岛之旅';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//https-diamondi-github-io.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
